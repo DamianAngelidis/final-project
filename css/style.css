@@ -12,8 +12,8 @@
   
  /* Navbar links */
  .topnav a {
-  float: right;
   display: block;
+  float: right;
   color: black;
   text-align: center;
   font-size: 1em;
