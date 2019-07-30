@@ -118,6 +118,10 @@ if(localStorage.length === 1){
   modalEl.style.display = 'none';
   selectionsEl.style.display = 'block';
   playGame();
+
 }else{
+
+  //turning off the game so the modal prompts for input
+  selectionsEl.style.display = 'none';
   playGame();
-};
+}
