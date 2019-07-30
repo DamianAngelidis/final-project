@@ -4,12 +4,13 @@ var modalEl = document.getElementById('modal');
 var selectionsEl = document.getElementById('selections');
 var formEl = document.getElementById('gameForm');
 var imgEl = document.getElementById('heroImage');
-var questArray = [];
 var getPrompt = document.getElementById('prompt');
+var questArray = [];
 var currentQuest = 1;
 var userName = '';
 var genderId = '';
 
+//Constructor Function - just stores data doesn't write anything
 function Question( question, firstAnswer, secondAnswer, displayImg, endsGame) {
   this.question = question;
   this.firstAnswer = firstAnswer;
@@ -23,6 +24,13 @@ function Question( question, firstAnswer, secondAnswer, displayImg, endsGame) {
 function storeData(key, data) {
   var stringy = JSON.stringify(data);
   localStorage.setItem(key, stringy);
+}
+
+function loadData(key){
+  //Getting data then parsing
+  var dataRaw = localStorage.getItem(key);
+  var dataPretty = JSON.parse(dataRaw);
+  return dataPretty;
 }
 
 function playGame() {
@@ -40,6 +48,7 @@ function playGame() {
     selectionsEl.addEventListener('click', handleChoice);
   }else{
     selectionsEl.removeEventListener('click', handleChoice);
+    //kicks out to high score page/end of game page
   }
 }
 
@@ -55,6 +64,31 @@ function handleChoice(event) {
   playGame();
 }
 
+// Switching modal to start game
+formEl.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  //getting input data from form
+  userName = e.target.userName.value;
+  genderId = e.target.pronoun.value;
+
+  //input validation
+  if(userName.length === 0 || genderId.length === 0){
+    alert('Please input a name and choose a pronoun');
+  } else {
+
+    //Storing initial setup
+    storeData('gameData', {
+      currentQuest: currentQuest,
+      userName: userName,
+      genderId: genderId
+    });
+
+    //switching the modal off
+    modalEl.style.display = 'none';
+    selectionsEl.style.display = 'block';
+  }
+});
 
 new Question('what is meaning of life?', 2, 3, 'https://via.placeholder.com/300x375', false);
 new Question('what is food?', 4, 5, 'https://via.placeholder.com/300x375', false);
@@ -71,32 +105,6 @@ new Question('placeholder12', 14, 15, 'https://via.placeholder.com/300x375', fal
 new Question('placeholder13', 14, 15, 'https://via.placeholder.com/300x375', false);
 new Question('placeholder14', 5, 6, 'https://via.placeholder.com/300x375', true);
 new Question('placeholder15', 5, 6, 'https://via.placeholder.com/300x375', true);
-
-
-// Switching modal to start game
-formEl.addEventListener('submit', function(e){
-  e.preventDefault();
-
-  //getting input data from form
-  userName = e.target.userName.value;
-  genderId = e.target.pronoun.value;
-
-  //input validation
-  if(userName.length === 0 || genderId.length === 0){
-    alert('Please input a name and choose a pronoun');
-  } else {
-    
-    //Storing initial setup
-    storeData('gameData', {
-      currentQuest: currentQuest,
-      userName: userName,
-      genderId: genderId
-    });
-    
-    //switching the modal off
-    modalEl.style.display = 'none';
-    selectionsEl.style.display = 'block';
-  }
-});
-
+loadData('gameData');
 playGame();
+
