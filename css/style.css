@@ -1,0 +1,28 @@
+#modal{
+  display: block;
+}
+#selections{
+  display: none;
+}
+
+/* Julie and Adrian */
+.topnav {
+  overflow: hidden;
+ }
+  
+ /* Navbar links */
+ .topnav a {
+  display: block;
+  float: right;
+  color: black;
+  text-align: center;
+  font-size: 1em;
+  font-family: sans-serif; 
+  padding: 14px 16px;
+  text-decoration: none;
+ }
+  
+ h1 {
+  
+ }
+ 
