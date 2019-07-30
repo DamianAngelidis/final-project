@@ -1,3 +1,13 @@
+/* font-color */
+:root{
+--color-name1: #606636;
+--color-name2: #240040;
+--color-name3: #16748A;
+--color-name4: #F25116;
+--color-name5: #171717;
+--color-name6: #eeeeee;
+}
+
 #background {
   width: 100%;
   height: 100%;
@@ -22,7 +32,7 @@ body{
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Bangers', cursive;
-  color: #eeeeee;
+  color: var(--color-name4);
 }
 h1 {
   font-size: 4em;
@@ -36,7 +46,6 @@ h2 {
 }
 
 h3 {
-  color: #eeeeee;
   font-size: 1.5em;
   letter-spacing: 0.2em;
   padding: 1em;
@@ -57,10 +66,22 @@ header, main {
   font-size: 1.9em;
   color: #FFD700;
 }
+
+#logo {
+  font-size: 2.5em;
+  margin-top: 1em;
+}
+
+main {
+  width: 70%;
+  margin: 30px auto;
+}
+
 nav {
   height: 80px;
   z-index: 1;
 }
+
 
 nav a {
   display: block;
@@ -75,10 +96,6 @@ nav a {
   line-height: 80px;
   width: 13%;
 }
-main {
-  width: 70%;
-  margin: 30px auto;
-}
 
 nav a:hover {
   color: #FFD700;
@@ -86,9 +103,16 @@ nav a:hover {
 
 p {
   font-family: 'Karla', sans-serif;
+  font-size: 1.2em;
   color: #eeeeee;
   letter-spacing: 0.1em;
+  line-height: 2em;
   padding: 0.9em;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: rgba(134, 133, 133, 0.6);
+  text-align: center;
+
 }
 
 section {
