@@ -47,46 +47,39 @@ formEl.addEventListener('submit', function(e){
   userName = e.target.userName.value;
   genderId = e.target.pronoun.value;
 
-  //switching the modal off
-  modalEl.style.display = 'none';
-  selectionsEl.style.display = 'block';
+  //input validation
+  if(userName.length === 0 || genderId.length === 0){
+    alert('Please input a name and choose a pronoun');
+  } else {
+    //switching the modal off
+    modalEl.style.display = 'none';
+    selectionsEl.style.display = 'block';
+  }
 });
 
 function playGame() {
   //updating html based on the currentQuest value - 1
   getPrompt.textContent = questArray[currentQuest - 1].question;
   imgEl.src = questArray[currentQuest - 1].displayImg;
-  
-  console.log('play game stuff', currentQuest);
-  selectionsEl.addEventListener('click', handleChoice);
+
+  //checking for end of game
+  if(questArray[currentQuest - 1].endsGame === false) {
+    selectionsEl.addEventListener('click', handleChoice);
+  }else{
+    selectionsEl.removeEventListener('click', handleChoice);
+  }
 }
 
 function handleChoice(event) {
-  console.log('I am working', event.target.id);
   //if the first option is targeted set current quest to the first link
   if(event.target.id === 'firstOption') {
     currentQuest = questArray[currentQuest - 1].firstAnswer;
-    console.log('inside if', currentQuest);
 
-    //if the second option is targeted set current quest to the second link
+  //if the second option is targeted set current quest to the second link
   } else if(event.target.id === 'secondOption') {
     currentQuest = questArray[currentQuest - 1].secondAnswer;
   }
-  console.log(event.target.id);
-  //Checking to end the game
-  if(questArray[currentQuest - 1].endsGame === false) {
-    playGame();
-  }else{
-    console.log('end game');
-  }
+  playGame();
 }
 
 playGame();
-
-// // Constructor function for page layout
-// function Story(content,image,linkOne,linkTwo,contentOne,contentTwo){
-//   document.getElementById('prompt').textContent(content);
-//   document.getElementById('heroImage').src=(image);
-//   document.getElementById('firstOption').textContent(contentOne);
-//   document.getElementById('secondOption').textContent(contentTwo);s
-// }
