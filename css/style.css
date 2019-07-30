@@ -1,28 +1,99 @@
-#modal{
-  display: block;
-}
-#selections{
-  display: none;
+#background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: -1;
 }
 
-/* Julie and Adrian */
-.topnav {
-  overflow: hidden;
- }
-  
- /* Navbar links */
- .topnav a {
+header, main {
+  z-index: 10;
+}
+
+nav {
+  height: 80px;
+  z-index: 1;
+}
+
+nav a {
   display: block;
   float: right;
-  color: black;
+  color: #eeeeee;
   text-align: center;
-  font-size: 1em;
-  font-family: sans-serif; 
-  padding: 14px 16px;
+  font-size: 1.4em;
+  font-family: 'VT323', monospace;
+  padding: 0px 16px;
   text-decoration: none;
+
+  line-height: 80px;
+  width: 13%;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bangers', cursive;
+  color: #eeeeee;
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+  font-size: 3.8em;
+  padding: 1em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  color: #eeeeee;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  padding: 1em;
+}
+
+p {
+  font-family: 'Karla', sans-serif;
+  color: #eeeeee;
+  letter-spacing: 0.1em;
+  padding: 0.9em;
+}
+
+main {
+  width: 70%;
+  margin: 30px auto;
+}
+
+#intro a {
+  float: right;
+  margin-top: 45px;
+  transition: font-size 3s, color 3s;
+    -moz-transition:font-size 3s, color 3s; /* Firefox 4 */
+    -webkit-transition:font-size 3s, color 3s; /* Safari and Chrome */
+    -o-transition:font-size 3s, color 3s;
+  text-decoration: none;
+}
+
+#intro a:hover {
+  font-size: 1.9em;
+  color: #FFD700;
+}
+
+section {
+  margin-bottom: 15px;
+}
+
+ .bio {
+   width: 50%;
  }
-  
- h1 {
-  
+
+ #biopic {
+   width: 20%;
+   padding: 3em;
+   margin-left: 25%;
  }
- 
+
