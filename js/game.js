@@ -78,11 +78,11 @@ formEl.addEventListener('submit', function(e){
   } else {
 
     //Storing initial setup
-    storeData('gameData', {
-      currentQuest: currentQuest,
-      userName: userName,
-      genderId: genderId
-    });
+    // storeData('gameData', {
+    //   currentQuest: currentQuest,
+    //   userName: userName,
+    //   genderId: genderId
+    // });
 
     //switching the modal off
     modalEl.style.display = 'none';
@@ -105,6 +105,13 @@ new Question('placeholder12', 14, 15, 'https://via.placeholder.com/300x375', fal
 new Question('placeholder13', 14, 15, 'https://via.placeholder.com/300x375', false);
 new Question('placeholder14', 5, 6, 'https://via.placeholder.com/300x375', true);
 new Question('placeholder15', 5, 6, 'https://via.placeholder.com/300x375', true);
-loadData('gameData');
-playGame();
+
+if(localStorage.length === 1){
+  console.log('has storage');
+}else{
+  playGame();
+}
+console.log(loadData('gameData'));
+
+// playGame();
 
