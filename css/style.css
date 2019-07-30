@@ -23,6 +23,31 @@
  }
   
  h1 {
-  
+  font-family: 'Bangers', sans-serif;
+  font-size: 3.8em;
+  padding: 1em;
+  border: 
+ }
+
+ h3 {
+  font-family: 'Bangers', sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  padding: 1em;
+ }
+
+ p {
+  font-family: 'Karla', sans-serif;
+  letter-spacing: 0.1em;
+  padding: 0.9em;
  }
  
+ .bio {
+   width: 50%;
+ }
+
+ #biopic {
+   width: 20%;
+   padding: 3em;
+   margin-left: 25%;
+ }
