@@ -5,11 +5,58 @@
   top: 0px;
   z-index: -1;
 }
+.bio {
+  width: 50%;
+}
 
+#biopic {
+  width: 20%;
+  padding: 3em;
+  margin-left: 25%;
+}
+body{
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bangers', cursive;
+  color: #eeeeee;
+}
+h1 {
+  font-size: 4em;
+  text-align: center;
+  font-size: 3.8em;
+  padding: 1em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  color: #eeeeee;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  padding: 1em;
+}
 header, main {
   z-index: 10;
 }
-
+#intro a {
+  float: right;
+  margin-top: 45px;
+  transition: font-size 3s, color 3s;
+    -moz-transition:font-size 3s, color 3s; /* Firefox 4 */
+    -webkit-transition:font-size 3s, color 3s; /* Safari and Chrome */
+    -o-transition:font-size 3s, color 3s;
+  text-decoration: none;
+}
+#intro a:hover {
+  font-size: 1.9em;
+  color: #FFD700;
+}
 nav {
   height: 80px;
   z-index: 1;
@@ -28,32 +75,13 @@ nav a {
   line-height: 80px;
   width: 13%;
 }
+main {
+  width: 70%;
+  margin: 30px auto;
+}
 
 nav a:hover {
   color: #FFD700;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bangers', cursive;
-  color: #eeeeee;
-}
-
-h1 {
-  font-size: 4em;
-  text-align: center;
-  font-size: 3.8em;
-  padding: 1em;
-}
-
-h2 {
-  font-size: 3em;
-}
-
-h3 {
-  color: #eeeeee;
-  font-size: 1.5em;
-  letter-spacing: 0.2em;
-  padding: 1em;
 }
 
 p {
@@ -63,37 +91,6 @@ p {
   padding: 0.9em;
 }
 
-main {
-  width: 70%;
-  margin: 30px auto;
-}
-
-#intro a {
-  float: right;
-  margin-top: 45px;
-  transition: font-size 3s, color 3s;
-    -moz-transition:font-size 3s, color 3s; /* Firefox 4 */
-    -webkit-transition:font-size 3s, color 3s; /* Safari and Chrome */
-    -o-transition:font-size 3s, color 3s;
-  text-decoration: none;
-}
-
-#intro a:hover {
-  font-size: 1.9em;
-  color: #FFD700;
-}
-
 section {
   margin-bottom: 15px;
 }
-
- .bio {
-   width: 50%;
- }
-
- #biopic {
-   width: 20%;
-   padding: 3em;
-   margin-left: 25%;
- }
-
