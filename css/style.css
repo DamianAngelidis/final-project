@@ -24,6 +24,7 @@ nav a {
   font-family: 'VT323', monospace;
   padding: 0px 16px;
   text-decoration: none;
+
   line-height: 80px;
   width: 13%;
 }
@@ -40,6 +41,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 4em;
   text-align: center;
+  font-size: 3.8em;
+  padding: 1em;
 }
 
 h2 {
@@ -47,13 +50,17 @@ h2 {
 }
 
 h3 {
-  font-size: 1.8em;
   color: #eeeeee;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  padding: 1em;
 }
 
 p {
   font-family: 'Karla', sans-serif;
   color: #eeeeee;
+  letter-spacing: 0.1em;
+  padding: 0.9em;
 }
 
 main {
@@ -79,3 +86,14 @@ main {
 section {
   margin-bottom: 15px;
 }
+
+ .bio {
+   width: 50%;
+ }
+
+ #biopic {
+   width: 20%;
+   padding: 3em;
+   margin-left: 25%;
+ }
+
