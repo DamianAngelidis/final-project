@@ -107,11 +107,17 @@ new Question('placeholder14', 5, 6, 'https://via.placeholder.com/300x375', true)
 new Question('placeholder15', 5, 6, 'https://via.placeholder.com/300x375', true);
 
 if(localStorage.length === 1){
-  console.log('has storage');
+  var userData = loadData('gameData');
+
+  // assigning loaded data to app data
+  currentQuest = userData.currentQuest;
+  userName = userData.userName;
+  genderId = userData.genderId;
+
+  //switching the modal off
+  modalEl.style.display = 'none';
+  selectionsEl.style.display = 'block';
+  playGame();
 }else{
   playGame();
-}
-console.log(loadData('gameData'));
-
-// playGame();
-
+};
