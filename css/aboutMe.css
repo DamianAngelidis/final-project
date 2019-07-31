@@ -1,3 +1,8 @@
+#aboutmeheader {
+  font-size: 5em;
+  letter-spacing: 0.1em;
+}
+
 #backgroundimage {
   position: fixed;
   width: 100%;
@@ -5,11 +10,6 @@
   top: 0;
   left: 0;
   background-position: center top; 
-}
-
-#aboutmeheader {
-  font-size: 5em;
-  letter-spacing: 0.1em;
 }
 
 .biopic {
@@ -35,6 +35,8 @@ h3 {
   font-size: 2em;
   text-align: center;
   letter-spacing: 5em;
+  margin-top: 12%;
+  margin-bottom: 6%;
 }
 
 p {
