@@ -6,11 +6,39 @@
   left: 0;
   background-position: center top; 
 }
+body{
+  text-align: center;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
 th{
   font-size: 3em;
   padding: 1em;
+  border-bottom: solid white 3px;
+
+  /* copied from p style css */
+  font-family: 'Karla', sans-serif;
+  color: #eeeeee;
+  letter-spacing: 0.1em;
+  line-height: 2em;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: rgba(134, 133, 133, 0.6);
+  text-align: center;
 }
 td{
   font-size: 2em;
   padding: 0.5em;
+
+  /* copied from style css */
+  font-family: 'Karla', sans-serif;
+  color: #eeeeee;
+  letter-spacing: 0.1em;
+  line-height: 2em;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: rgba(134, 133, 133, 0.6);
+  text-align: center;
 }
