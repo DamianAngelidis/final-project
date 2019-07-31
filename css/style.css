@@ -4,13 +4,13 @@
 --color-name1: #606636;
 --color-name2: #240040;
 --color-name3: #16748A;
---color-name4: #F25116;
+--color-name4: #FFd400;
 --color-name5: #171717;
 --color-name6: #eeeeee;
 }
 
 a {
-  
+  padding: 5%;
 }
 
 #backgroundimage {
