@@ -27,9 +27,13 @@ var scoreData = loadData('score');
 
 // var userName = scoreData.name;
 // var score = scoreData.score;
+for(var i = 0; i < scoreData.length; i++){
+  var trEl = document.createElement('tr');
+  tableBodyEl.appendChild(trEl);
 
-//for i scoreData.length
-//write to table
+  addElement('td', scoreData[i].name, trEl);
+  addElement('td', scoreData[i].score, trEl);
+}
 
 //This is example addition use this template to the local storage
 var trEl = document.createElement('tr');
