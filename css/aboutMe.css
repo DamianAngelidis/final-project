@@ -1,0 +1,27 @@
+#backgroundimage {
+  position: fixed;
+  width: 100%;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  background-position: center top; 
+}
+
+#aboutmeheader {
+  font-size: 5em;
+  letter-spacing: 0.1em;
+}
+
+.biopic {
+  width: 40%;
+  display: block;
+  margin: 0px auto;
+}
+
+h1 {
+ font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+}
