@@ -61,6 +61,12 @@ function playGame() {
 }
 
 function handleChoice(event) {
+
+  if (currentQuest === 3 || currentQuest === 8) {
+    console.log('I work')
+    ansTwoEl.className = 'show';
+  }
+
   //if the first option is targeted set current quest to the first link
   if(event.target.id === 'firstOption') {
     currentQuest = questArray[currentQuest - 1].firstAnswer;
@@ -68,6 +74,13 @@ function handleChoice(event) {
   //if the second option is targeted set current quest to the second link
   } else if(event.target.id === 'secondOption') {
     currentQuest = questArray[currentQuest - 1].secondAnswer;
+  }
+
+  if (currentQuest === 3 || currentQuest === 8) {
+    console.log('I work')
+    ansTwoEl.className = 'show';
+  } else {
+    ansTwoEl.className = '';
   }
   playGame();
 }
@@ -84,6 +97,11 @@ function handleBetween(event) {
     modalEl.style.display = 'none';
     betweenEl.style.display = 'none';
     selectionsEl.style.display = 'block';
+
+    if (currentQuest === 3 || currentQuest === 8) {
+      console.log('I work')
+      selectionsEl.addEventListener('mouseover', handleHover);
+    }
     playGame();
   } else {
     localStorage.clear();
@@ -91,6 +109,20 @@ function handleBetween(event) {
     modalEl.style.display = 'block';
     betweenEl.style.display = 'none';
     selectionsEl.style.display = 'none';
+  }
+}
+
+function handleHover(event) {
+  event.preventDefault();
+
+  console.log('Das ist mein');
+
+  if(event.target.id === 'secondOption') {
+    var pEl = document.createElement('p');
+    pEl.className = 'show';
+    selectionsEl.appendChild(pEl);
+
+    console.log('Das ist mein');
   }
 }
 

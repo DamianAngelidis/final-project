@@ -34,3 +34,25 @@ p{
 #selections h4 {
     font-size: 1.2em;
 }
+
+.show:after {
+    content: '';
+    display: block;
+    height: 1.3em;
+    background-image: url('https://www.goodfreephotos.com/albums/vector-images/dripping-slime-vector-clipart.png');
+    background-repeat: repeat-x;
+    background-size: 5% auto;
+    transition: transform 0.1s ease-out;
+    transform-origin: left top;
+    transform: scaleY(0);
+    filter: hue-rotate(-90deg);
+    padding: 0em;
+    margin: 0%; 
+}
+    
+.show:hover:after {
+    transform: scaleY(1);
+    transition: transform 1s ease-in;
+}
+
+
