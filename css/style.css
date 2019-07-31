@@ -30,7 +30,7 @@ h1 {
   font-size: 8em;
   text-align: center;
   padding: 1em;
-  text-shadow: 2px 2px 4px #eeeeee;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 h2 {
@@ -91,6 +91,7 @@ nav a {
   font-family: 'VT323', monospace;
   padding: 0px 16px;
   text-decoration: none;
+  text-shadow: 1px 1px 3px #000000;
 
   line-height: 80px;
   width: 13%;
