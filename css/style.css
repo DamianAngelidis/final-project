@@ -1,3 +1,4 @@
+
 /* font-color */
 :root{
 --color-name1: #606636;
@@ -57,8 +58,8 @@ header, main {
   float: right;
   margin-top: 45px;
   transition: font-size 3s, color 3s;
-    -moz-transition:font-size 3s, color 3s; /* Firefox 4 */
-    -webkit-transition:font-size 3s, color 3s; /* Safari and Chrome */
+    -moz-transition:font-size 3s, color 3s; 
+    -webkit-transition:font-size 3s, color 3s; 
     -o-transition:font-size 3s, color 3s;
   text-decoration: none;
 }
