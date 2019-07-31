@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">   
 
     <link rel = "stylesheet" type = "text/css" href = "css/reset.css" />
     <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    <link rel = "stylesheet" type = "text/css" href = "css/game.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Karla|VT323&display=swap" rel="stylesheet">
 
     <title>Document</title>
 </head>
 <body>
+
+
     <header>
         <p><a href = "index.html">Home</a></p>
     </header>
@@ -19,30 +24,38 @@
 
 
         <section id = "modal">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>You push off several pieces of debris, and struggle to sit up and as you do, you see your badge. On it is your name and preferred pronouns.</p>
 
             <form id="gameForm">
-                <label>What is your name</label>
+                <label>Name:</label>
                 <input name = "userName" type = "text">
                 
-                <label>Choose your pronoun</label>
+                <label>Pronoun: </label>
                 <input list = "pronouns" name="pronoun">
                 <datalist id = "pronouns">
                     <option value = "he/him"></option>
                     <option value = "she/her"></option>
                     <option value = "they/them"></option>
                 </datalist>
+
                 <input type="submit" name="submitButton" value= "submit" />
             </form>
         </section>
 
+        <section id = "inBetween">
+            <p id = "alert">It appears you left while in the middle of the game. Would you like to resume this game, or start over? </p>
+
+            <p id = "stay">Resume the Game.</p>
+            <p id = "go">Start Over</p>
+        </section>
+
         <section id = "selections">
-            <p id = "prompt">1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p id = "prompt"></p>
 
             <img id = "heroImage" src = "" />
 
-            <p id = "firstOption" height="300px">First Option</p>
-            <p id = "secondOption" height="300px" >Second Option</p>
+            <p id = "firstOption" height="300px"></p>
+            <p id = "secondOption" height="300px" ></p>
         </section>
     </main>
 
