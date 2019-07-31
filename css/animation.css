@@ -1,0 +1,91 @@
+/* Inspiration of the begining body of the rocket from: https://codepen.io/karanjthakkar/pen/jAXgNW */
+.spaceShip{
+  left: -30%;
+  top: 45%;
+  position: absolute;
+  width: 5em;
+  height: 10em;
+  border-top-right-radius: 250%;
+  border-bottom-right-radius: 250%;
+  border-bottom-left-radius: 30%;
+  border-top-left-radius: 30%;
+  background-color: #631A11;
+  border: solid .25em #872400;
+  animation: moveship 10s infinite;
+}
+.spaceShip::before{
+  content: '';
+  width: 20em;
+  height: 5em;
+  position: absolute;
+  top: 25%;
+  left: -15%;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 25%;
+  border-top-left-radius: 25%;
+  border: solid .15em #D2D6D9;
+  background-color: #9CA1A6;
+  z-index: 100;
+}
+.spaceShip::after{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  margin: 0 auto;
+  left: 225%;
+  bottom: 30%;
+  right: 0;
+  height: 3em;
+  width: 3em;
+  background-color: #C1D9D9;
+  border: solid .25em #737260;
+  z-index: 101;
+}
+.windowOne{
+  position: absolute;
+  border-radius: 50%;
+  margin: 0 auto;
+  left: 130%;
+  bottom: 30%;
+  right: 0;
+  height: 3em;
+  width: 3em;
+  background-color: #C1D9D9;
+  border: solid .25em #737260;
+  z-index: 101;
+}
+.fire{
+  position: absolute;
+  border-right: 8em solid #D3DFEA;
+  border-bottom: 2em solid transparent;
+  border-top: 2em solid transparent;
+  width: 0;
+  height: 0;
+  right: 100%;
+  top: 30%;
+  z-index: 98;
+  /* Thanks to Peter Carmichael for providing me with this code */
+  -webkit-filter: drop-shadow(2em 2em 2em rgba(154, 216, 245, 0.9));
+  filter: drop-shadow(2em 2em 2em rgba(154, 216, 245, 0.808));
+
+}
+.fireLittle{
+  position: absolute;
+  right: 100%;
+  top: 30%;
+  z-index: 99;
+  width: 0;
+  height: 0;
+  border-top: 2em solid transparent;
+  border-right: 4em solid #A2B8CC;
+  border-bottom: 2em solid transparent;
+}
+@keyframes moveship{
+  from{
+    margin-left: 0%;
+  }
+  to{
+    margin-left: 200%;
+  }
+}

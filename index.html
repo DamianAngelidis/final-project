@@ -7,10 +7,16 @@
 
     <link rel = "stylesheet" type = "text/css" href = "css/reset.css" />
     <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    <link rel = "stylesheet" type = "text/css" href = "css/animation.css" />
 
     <link href="https://fonts.googleapis.com/css?family=Bangers|Karla|VT323&display=swap" rel="stylesheet">
 
+    <img src="img/background.jpg" alt="space" id="backgroundimage" />
+
     <title>Space Castaway</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body>
     <header>
@@ -24,15 +30,18 @@
     </header>
 
     <main>  
-        <section id ="logo">
-            <h1>Space Castaway</h1>
-        </section>
-
+        <h1 class="animated zoomInLeft delay-1s">Space Castaway</h1>
+        
         <section id = "intro">
             <p>You were a pilot on a deep-space scientific exploration mission on behalf of Earth, until a meteor shower that went completely undetected on the radar tore through your ship. With the ship suffering severe damage and the engines failing, you decided to try for an emergency landing onto a nearby planet. Your last memory was turning around to see a large metal container flying towards your head. You wake up in the abandoned command room with a piece a metal in your leg and a throbbing pain in your head, surrounded by unknown dangers. Can you survive and escape?</p>
 
             <a href = "game.html"><h3>Play Game</h3></a>
         </section>
+        <div class = "spaceShip">
+            <div class = "windowOne"></div>
+            <div class = "fire"></div>
+            <div class = "fireLittle"></div>
+        </div>
     </main>
 
     <footer>
