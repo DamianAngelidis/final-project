@@ -13,9 +13,11 @@ var questArray = [];
 var currentQuest = 1;
 var userName = '';
 var genderId = '';
+var score = 0;
+var scoreData = [];
 
 //Constructor Function - just stores data doesn't write anything
-function Question( question, firstResponse, secondResponse, firstAnswer, secondAnswer, displayImg, endsGame) {
+function Question( question, firstResponse, secondResponse, firstAnswer, secondAnswer, displayImg, endsGame, scoreDelta = 0) {
   this.question = question;
   this.firstResponse = firstResponse;
   this.secondResponse = secondResponse;
@@ -24,6 +26,7 @@ function Question( question, firstResponse, secondResponse, firstAnswer, secondA
   this.displayImg = displayImg;
   this.endsGame = endsGame;
 
+  this.scoreDelta = scoreDelta;
   questArray.push(this);
 }
 
@@ -61,11 +64,31 @@ function playGame() {
     gameOverEl.style.display = 'block';
     localStorage.removeItem('gameData');
     //kicks out to high score page/end of game page
+
+    scoreData.push({
+      name: userName,
+      score: score,
+    });
+    //loads the scores
+    var localScore = loadData('score');
+
+    //checking if there is score data
+    if(!localScore){
+      //if no stored data then store it.
+      storeData('score', scoreData);
+    } else {
+      //if there is stored data then push to it
+      localScore.push({
+        name: userName,
+        score: score,
+      });
+    }
   }
 }
 
 function handleChoice(event) {
-
+  score += questArray[currentQuest - 1].scoreDelta;
+  
   //if the first option is targeted set current quest to the first link
   if(event.target.id === 'firstOption') {
     currentQuest = questArray[currentQuest - 1].firstAnswer;
@@ -76,7 +99,7 @@ function handleChoice(event) {
   }
 
   if (currentQuest === 3 || currentQuest === 8) {
-    console.log('I work')
+    console.log('I work');
     ansTwoEl.className = 'show';
   }
   playGame();
@@ -99,6 +122,7 @@ function handleBetween(event) {
     modalEl.style.display = 'none';
     betweenEl.style.display = 'none';
     selectionsEl.style.display = 'block';
+
     playGame();
   } else {
     localStorage.clear();
@@ -122,13 +146,6 @@ formEl.addEventListener('submit', function(e){
     alert('Please input a name and choose a pronoun');
   } else {
 
-    //Storing initial setup
-    // storeData('gameData', {
-    //   currentQuest: currentQuest,
-    //   userName: userName,
-    //   genderId: genderId
-    // });
-
     //switching the modal off
     console.log('hi');
     modalEl.style.display = 'none';
@@ -137,9 +154,9 @@ formEl.addEventListener('submit', function(e){
   }
 });
 
-new Question('As you get a better look at your surroundings, you notice all of your crewmates are gone. When you start to move, a shooting pain in your leg reminds you of your injury.Do you head to the comm room to try to make contact with someone, or do you head to the medbay for treatment?', 'Go to the comm room.', 'Go to the medbay', 2, 3, './img/crashed-plane.jpg', false); //image from https://unsplash.com/photos/C2KtSsp-ziQ
-new Question('You stumble your way to the nearby communication center. As you enter, you see a full first aid kit on the wall. You take the time to remove the metal, clean your wound, and stitch yourself up. You look at the communication array, or what’s left of it, as most is destroyed and useless. All of a sudden, the screen lights up, flickering with an unknown symbol. You hurry about the room, and as you remember how you haven’t seen a person, you are struck with sharp pains in your stomach. Do you head to the dormitory to find survivors, or to the mess hall to get food?', 'Go to the dormitory.', 'Go to the mess hall.', 4, 5, './img/glitch-screen.jpg', false); //image from https://www.publicdomainpictures.net/pictures/250000/velka/glitch-screen-17.jpg 
-new Question('Your journey to the medbay doesn’t last very long, as that wing of the ship has torn off. You remember there being a first aid kit in the mess hall. As you shuffle your way in that direction, a piece of goo falls to the floor. Do you continue towards the hall, or do you inspect the slime closer?', 'Go to the mess hall.', 'Inspect the slime.', 5, 6, './img/slime.jpeg', false); //image from https://unsplash.com/photos/z0FbhQhpimI
+new Question('As you get a better look at your surroundings, you notice all of your crewmates are gone. When you start to move, a shooting pain in your leg reminds you of your injury.Do you head to the comm room to try to make contact with someone, or do you head to the medbay for treatment?', 'Go to the comm room.', 'Go to the medbay', 2, 3, './img/crashed-plane.jpg', false, 0); //image from https://unsplash.com/photos/C2KtSsp-ziQ
+new Question('You stumble your way to the nearby communication center. As you enter, you see a full first aid kit on the wall. You take the time to remove the metal, clean your wound, and stitch yourself up. You look at the communication array, or what’s left of it, as most is destroyed and useless. All of a sudden, the screen lights up, flickering with an unknown symbol. You hurry about the room, and as you remember how you haven’t seen a person, you are struck with sharp pains in your stomach. Do you head to the dormitory to find survivors, or to the mess hall to get food?', 'Go to the dormitory.', 'Go to the mess hall.', 4, 5, './img/glitch-screen.jpg', false, 1); //image from https://www.publicdomainpictures.net/pictures/250000/velka/glitch-screen-17.jpg 
+new Question('Your journey to the medbay doesn’t last very long, as that wing of the ship has torn off. You remember there being a first aid kit in the mess hall. As you shuffle your way in that direction, a piece of goo falls to the floor. Do you continue towards the hall, or do you inspect the slime closer?', 'Go to the mess hall.', 'Inspect the slime.', 5, 6, './img/slime.jpeg', false, -1); //image from https://unsplash.com/photos/z0FbhQhpimI
 new Question('You have no luck finding survivors. While in the dormitories, you see a pool of blood dripping onto the floor. It looks like a body was dragged onto the floor and out the exit door. Do you leave out the same exit door or look for escape pods?', 'Exit the ship', 'Find the escape pods.', 7, 8, './img/red-river.jpeg', false); //image from https://unsplash.com/photos/lhnOvu72BM8
 new Question('In the mess hall, you hear screeching from the walk-in freezer - the door is extremely dented. The screams stop as you approach. Do you open the door and fight whatever is in there or do you run to look for an escape pod?', 'Confront the unknown entity', 'Get to the escape pod', 8, 9, './img/rusty-white-door.jpeg', false); //image from https://unsplash.com/photos/pPjmohi1I2Y
 new Question('The Goo rapidly engulfs your hand and climbs up to your elbow, chemically burning your tissues. Do you try to slice off the goo with your knife or cut off your own arm to save your torso?', 'Slice off the goo.', 'Slice off your arm.', 9, 10, './img/green-paint-both-hands.jpeg', false); //image from https://unsplash.com/photos/IhXrWDckZOQ
