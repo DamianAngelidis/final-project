@@ -16,12 +16,32 @@
   width: 40%;
   display: block;
   margin: 0px auto;
+  border: 0.3em groove rgb(60, 57, 57);
+  margin-top: 6%;
+  margin-bottom: 6%;
+}
+
+.fiveletter {
+  margin-left: 12%;
 }
 
 h1 {
  font-size: 3em;
+ margin-bottom: 6%;
+ text-shadow: 2px 2px 4px #eeeeee;
 }
 
 h3 {
   font-size: 2em;
+  text-align: center;
+  letter-spacing: 5em;
+}
+
+p {
+  text-indent: 1em;
+  padding: 1em;
+}
+
+.sixletter {
+  margin-left: 3%;
 }
