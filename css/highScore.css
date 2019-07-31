@@ -1,0 +1,16 @@
+#backgroundimage {
+  position: fixed;
+  height: 100%;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  background-position: center top; 
+}
+th{
+  font-size: 3em;
+  padding: 1em;
+}
+td{
+  font-size: 2em;
+  padding: 0.5em;
+}
