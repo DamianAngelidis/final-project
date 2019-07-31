@@ -5,3 +5,31 @@
 #modal {
     display: block;
 }
+
+body{
+    height:
+
+#inBetween p, #selections p {
+    cursor: pointer;
+}
+
+#inBetween p:hover, #selections p:hover {
+    background-color: #eeeeee;
+    color: #b7410e;
+}
+
+h4 {
+  font-size: 1.4em;
+  color: #eeeeee;
+  letter-spacing: 0.1em;
+  line-height: 2em;
+  padding: 0.9em;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: rgba(134, 133, 133, 0.6);
+  text-align: center;
+}
+
+#selections h4 {
+    font-size: 1.2em;
+}
