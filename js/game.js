@@ -2,6 +2,7 @@
 
 var modalEl = document.getElementById('modal');
 var selectionsEl = document.getElementById('selections');
+var gameOverEl = document.getElementById('gameOver');
 var formEl = document.getElementById('gameForm');
 var imgEl = document.getElementById('heroImage');
 var getPrompt = document.getElementById('prompt');
@@ -59,6 +60,9 @@ function playGame() {
     selectionsEl.addEventListener('click', handleChoice);
   }else{
     selectionsEl.removeEventListener('click', handleChoice);
+    selectionsEl.style.display = 'none';
+    gameOverEl.style.display = 'block';
+    localStorage.removeItem('gameData');
     //kicks out to high score page/end of game page
 
     scoreData.push({
@@ -83,14 +87,8 @@ function playGame() {
 }
 
 function handleChoice(event) {
-
-  if (currentQuest === 3 || currentQuest === 8) {
-    console.log('I work');
-    ansTwoEl.className = 'show';
-  }
-
   score += questArray[currentQuest - 1].scoreDelta;
-
+  
   //if the first option is targeted set current quest to the first link
   if(event.target.id === 'firstOption') {
     currentQuest = questArray[currentQuest - 1].firstAnswer;
@@ -103,8 +101,6 @@ function handleChoice(event) {
   if (currentQuest === 3 || currentQuest === 8) {
     console.log('I work');
     ansTwoEl.className = 'show';
-  } else {
-    ansTwoEl.className = '';
   }
   playGame();
 }
@@ -117,15 +113,16 @@ function handleBetween(event) {
     userName = userData.userName;
     genderId = userData.genderId;
 
+    if (currentQuest === 3 || currentQuest === 8) {
+      console.log('I work')
+      ansTwoEl.className = 'show';
+    } 
+    
     //switching the modal off
     modalEl.style.display = 'none';
     betweenEl.style.display = 'none';
     selectionsEl.style.display = 'block';
 
-    if (currentQuest === 3 || currentQuest === 8) {
-      console.log('I work');
-      selectionsEl.addEventListener('mouseover', handleHover);
-    }
     playGame();
   } else {
     localStorage.clear();
@@ -133,20 +130,6 @@ function handleBetween(event) {
     modalEl.style.display = 'block';
     betweenEl.style.display = 'none';
     selectionsEl.style.display = 'none';
-  }
-}
-
-function handleHover(event) {
-  event.preventDefault();
-
-  console.log('Das ist mein');
-
-  if(event.target.id === 'secondOption') {
-    var pEl = document.createElement('p');
-    pEl.className = 'show';
-    selectionsEl.appendChild(pEl);
-
-    console.log('Das ist mein');
   }
 }
 
