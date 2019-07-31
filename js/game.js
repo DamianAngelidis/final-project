@@ -7,6 +7,7 @@ var imgEl = document.getElementById('heroImage');
 var getPrompt = document.getElementById('prompt');
 var ansOneEl = document.getElementById('firstOption');
 var ansTwoEl = document.getElementById('secondOption');
+var betweenEl = document.getElementById('inBetween');
 var questArray = [];
 var currentQuest = 1;
 var userName = '';
@@ -71,6 +72,28 @@ function handleChoice(event) {
   playGame();
 }
 
+function handleBetween(event) {
+  event.preventDefault();
+  if(event.target.id === 'stay') {
+    // assigning loaded data to app data
+    currentQuest = userData.currentQuest;
+    userName = userData.userName;
+    genderId = userData.genderId;
+
+    //switching the modal off
+    modalEl.style.display = 'none';
+    betweenEl.style.display = 'none';
+    selectionsEl.style.display = 'block';
+    playGame();
+  } else {
+    localStorage.clear();
+
+    modalEl.style.display = 'block';
+    betweenEl.style.display = 'none';
+    selectionsEl.style.display = 'none';
+  }
+}
+
 // Switching modal to start game
 formEl.addEventListener('submit', function(e){
   e.preventDefault();
@@ -95,6 +118,7 @@ formEl.addEventListener('submit', function(e){
     console.log('hi');
     modalEl.style.display = 'none';
     selectionsEl.style.display = 'block';
+    playGame();
   }
 });
 
@@ -117,19 +141,15 @@ new Question('As this unknown being slowly enveloping your mind, you are privy t
 if(localStorage.length === 1){
   var userData = loadData('gameData');
 
-  // assigning loaded data to app data
-  currentQuest = userData.currentQuest;
-  userName = userData.userName;
-  genderId = userData.genderId;
-
-  //switching the modal off
+  selectionsEl.style.display = 'none';
   modalEl.style.display = 'none';
-  selectionsEl.style.display = 'block';
-  playGame();
+
+  betweenEl.style.display = 'block';
+  betweenEl.addEventListener('click', handleBetween);
 
 }else{
 
   //turning off the game so the modal prompts for input
   selectionsEl.style.display = 'none';
-  playGame();
+
 }
