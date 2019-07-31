@@ -1,5 +1,3 @@
-
-
 h4 {
     font-size: 1.4em;
     color: #eeeeee;
@@ -21,7 +19,7 @@ img{
 #inBetween p, #selections p {
     cursor: pointer;
 }
-#inBetween, #selections { 
+#inBetween, #selections, #gameOver { 
     display: none;
 }
 #inBetween p:hover, #selections p:hover {
