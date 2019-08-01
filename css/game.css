@@ -58,7 +58,6 @@ p{
 #selections h4 {
     font-size: 1.2em;
 }
-
 .show:after {
     content: '';
     display: block;
@@ -78,5 +77,3 @@ p{
     transform: scaleY(1);
     transition: transform 1s ease-in;
 }
-
-
