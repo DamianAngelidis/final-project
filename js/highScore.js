@@ -1,7 +1,6 @@
 
 var tableBodyEl = document.getElementsByTagName('tbody')[0];
 
-
 //*************Functions************* */
 //Add element function
 function addElement(childElType, childText, ParentEl){
@@ -17,16 +16,21 @@ function loadData(key){
   return dataPretty;
 }
 
-function storeData(key, data) {
-  var stringy = JSON.stringify(data);
-  localStorage.setItem(key, stringy);
-}
-
 // **********Executable Code*************
 var scoreData = loadData('score');
 
-// var userName = scoreData.name;
-// var score = scoreData.score;
+//sorts data in decending order
+scoreData.sort(function(a,b){
+  if(a.score < b.score){
+    return 1;
+  }else if(a.score > b.score){
+    return -1;
+  }else{
+    return 0;
+  }
+});
+
+//makes a row and writes the name and score per row
 for(var i = 0; i < scoreData.length; i++){
   var trEl = document.createElement('tr');
   tableBodyEl.appendChild(trEl);
@@ -34,10 +38,3 @@ for(var i = 0; i < scoreData.length; i++){
   addElement('td', scoreData[i].name, trEl);
   addElement('td', scoreData[i].score, trEl);
 }
-
-//This is example addition use this template to the local storage
-var trEl = document.createElement('tr');
-tableBodyEl.appendChild(trEl);
-
-addElement('td', 'Damian', trEl);
-addElement('td', '10', trEl);
