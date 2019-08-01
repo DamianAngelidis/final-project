@@ -1,6 +1,20 @@
 #aboutmeheader {
-  font-size: 5em;
+  font-size: 6em;
   letter-spacing: 0.1em;
+  margin-bottom: 0em;
+}
+
+.bio {
+  margin-bottom: 20%;
+}
+
+#backgroundimage {
+  position: fixed;
+  width: 100%;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  background-position: center top; 
 }
 
 .biopic {
@@ -18,7 +32,6 @@
 
 h1 {
  font-size: 3em;
- margin-bottom: 6%;
  text-shadow: 2px 2px 4px #000000;
 }
 
@@ -26,7 +39,7 @@ h3 {
   font-size: 2em;
   text-align: center;
   letter-spacing: 5em;
-  margin-top: 12%;
+  margin-top: 0%;
   margin-bottom: 6%;
 }
 
