@@ -64,7 +64,6 @@ function playGame() {
     gameOverEl.style.display = 'block';
     localStorage.removeItem('gameData');
     //kicks out to high score page/end of game page
-
     scoreData.push({
       name: userName,
       score: score,
@@ -82,6 +81,9 @@ function playGame() {
         name: userName,
         score: score,
       });
+
+      //store the data after it is made
+      storeData('score', localScore);
     }
   }
 }
@@ -114,7 +116,7 @@ function handleBetween(event) {
     genderId = userData.genderId;
 
     if (currentQuest === 3 || currentQuest === 8) {
-      console.log('I work')
+      console.log('I work');
       ansTwoEl.className = 'show';
     } 
     
@@ -125,7 +127,7 @@ function handleBetween(event) {
 
     playGame();
   } else {
-    localStorage.clear();
+    localStorage.removeItem('gameData');
 
     modalEl.style.display = 'block';
     betweenEl.style.display = 'none';
