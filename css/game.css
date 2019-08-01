@@ -19,7 +19,7 @@ h4 {
 header {
     float: right;
     margin-bottom: 8%;
-    padding: 3%;
+    padding: 4%;
     display: block;
 }
 
@@ -54,7 +54,8 @@ main {
 #modal {
     display: block;
 }
-p{
+
+p {
     margin-left: 0;
     margin-right: 0;
     padding: 0.3em;
@@ -66,10 +67,10 @@ p{
 .show:after {
     content: '';
     display: block;
-    height: 1.3em;
+    height: 2em;
     background-image: url('https://www.goodfreephotos.com/albums/vector-images/dripping-slime-vector-clipart.png');
     background-repeat: repeat-x;
-    background-size: 5% auto;
+    background-size: 3% auto;
     transition: transform 0.1s ease-out;
     transform-origin: left top;
     transform: scaleY(0);
@@ -162,7 +163,6 @@ p{
     animation: glitch-anim-1 .75s infinite linear alternate-reverse;
     left: 10px;
     text-shadow: -1px 0 red;
-    
     background: black;
   }
   
