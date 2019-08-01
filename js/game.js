@@ -12,7 +12,7 @@ var betweenEl = document.getElementById('inBetween');
 var scoreEl = document.getElementById('score');
 var el = document.getElementById('backup');
 
-var header = document.getElementById('header'); 
+var header = document.getElementById('header');
 var body = document.getElementById('main');
 
 var questArray = [];
@@ -105,17 +105,17 @@ function glitchScreen() { //glitch screen code inspired by css tricks website
 
   function incrementSeconds() {
     if(seconds === 0) {
-        el.style.display = 'none';
-        header.style.display = 'block';
-        body.style.display = 'block';
+      el.style.display = 'none';
+      header.style.display = 'block';
+      body.style.display = 'block';
     } else {
-        console.log('hi')
-        seconds += 1;
-        console.log('hello', seconds, el)
+      console.log('hi');
+      seconds += 1;
+      console.log('hello', seconds, el);
     }
-}
+  }
 
-    var counter = setInterval(incrementSeconds, 1000);
+  var counter = setInterval(incrementSeconds, 1000);
 }
 
 function handleChoice(event) {
