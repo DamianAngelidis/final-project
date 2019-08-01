@@ -8,15 +8,6 @@
   margin-bottom: 20%;
 }
 
-#backgroundimage {
-  position: fixed;
-  width: 100%;
-  z-index: -2;
-  top: 0;
-  left: 0;
-  background-position: center top; 
-}
-
 .biopic {
   width: 40%;
   display: block;
