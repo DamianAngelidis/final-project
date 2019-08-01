@@ -4,6 +4,9 @@
 
 - As a developer, I want to make unique cards and pages quickly, so we can generate content quickly.
 - As a developer, I want to store my data in a format that will be readable so that the devs that look at my code can easily find what they need.
+- As a developer, I want to be able to start and stop the game at multiple points
+- As a developer, I want there to be some cool animation, so I will work on some animation that is responsive to what theme of the game is
+- As a developer, I want simple, understandable functions and names that make sense to whatever they're being applied too.   
 
 ## User
 
@@ -29,5 +32,5 @@
 
 ## Product Owners
 
-- As the product owners, we want the game to be attractive to users, so we will work with the design team to make sure that the designers choose an appealing color pallet
+- As the product owners, we want the game to be attractive to Peter was Here users, so we will work with the design team to make sure that the designers choose an appealing color pallet
 - As the product owners, we want the game to be lucrative, so we will work with everyone involved in the project to make sure we get the best first version of the project out to the users
