@@ -61,3 +61,9 @@ Our group as a whole would like to extend our thanks to our amazing teacher Lena
   - If we were working on something
 - Group-Only Standup: Take place right before lunch
 - At the end of the day we would do a group talk about what we thought went well and what didn't
+
+### Group Conflict Plan
+
+1. Talk to the individual away from the group and try to talk it out
+2. Talk with the whole group, bring up issues that group can work through together
+3. Go to Lena and have her be an unbiased ear
