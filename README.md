@@ -37,4 +37,11 @@
 - 1400: Group discussion about how we feel about all the images on the page, whether or not we wanted to do more with them with animation
 - 1500: JE and JD working on high score page and js. DA working on the goo button. AH working on README and USERSTORIES
 - 1600: JD continued working on the high score page, AH worked on aligning images center, JE worked on styling about developers page, DA finished the goo button
-- 1700:
+- 1700: AH resized images in game.js. JD made high score page. JE finished aboutme and did style css. DA finished slime button and started end modal.
+
+### August 1, 2019
+
+- 900: Troubleshooted background image. DA working on glitch effect. AH working on the audio effect.
+- 1000: Standup
+- 1100: JE working on styling on the about me page, styled first modal. JD got scores working woo, DA working on the glitch affect, AH finished figuring out the audio
+- 1200: lunch, blackout no code
