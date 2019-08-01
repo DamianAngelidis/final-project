@@ -10,12 +10,18 @@ var ansOneEl = document.getElementById('firstOption');
 var ansTwoEl = document.getElementById('secondOption');
 var betweenEl = document.getElementById('inBetween');
 var scoreEl = document.getElementById('score');
+var el = document.getElementById('backup');
+
+var header = document.getElementById('header'); 
+var body = document.getElementById('main');
+
 var questArray = [];
 var currentQuest = 1;
 var userName = '';
 var genderId = '';
 var score = 3000;
 var scoreData = [];
+var seconds = 0;
 
 //Constructor Function - just stores data doesn't write anything
 function Question( question, firstResponse, secondResponse, firstAnswer, secondAnswer, displayImg, endsGame, scoreDelta = 0) {
@@ -90,6 +96,28 @@ function playGame() {
   }
 }
 
+function glitchScreen() { //glitch screen code inspired by css tricks website
+  console.log('hi');
+
+  el.style.display = 'block';
+  header.style.display = 'none';
+  body.style.display = 'none';
+
+  function incrementSeconds() {
+    if(seconds === 0) {
+        el.style.display = 'none';
+        header.style.display = 'block';
+        body.style.display = 'block';
+    } else {
+        console.log('hi')
+        seconds += 1;
+        console.log('hello', seconds, el)
+    }
+}
+
+    var counter = setInterval(incrementSeconds, 1000);
+}
+
 function handleChoice(event) {
 
   //if the first option is targeted set current quest to the first link
@@ -106,6 +134,12 @@ function handleChoice(event) {
   if (currentQuest === 3 || currentQuest === 8) {
     ansTwoEl.className = 'show';
   }
+
+  if(currentQuest === 2) {
+    console.log('hey');
+    glitchScreen();
+  }
+
   playGame();
 }
 
@@ -119,6 +153,11 @@ function handleBetween(event) {
 
     if (currentQuest === 3 || currentQuest === 8) {
       ansTwoEl.className = 'show';
+    }
+
+    if(currentQuest === 2) {
+      console.log('hey');
+      glitchScreen();
     }
 
     //switching the modal off
