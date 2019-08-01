@@ -36,5 +36,5 @@
 - 1300: Mob programming about how we like how the CSS is going, making changes about color fonts and spacing of everything on the page
 - 1400: Group discussion about how we feel about all the images on the page, whether or not we wanted to do more with them with animation
 - 1500: JE and JD working on high score page and js. DA working on the goo button. AH working on README and USERSTORIES
-- 1600:
+- 1600: JD continued working on the high score page, AH worked on aligning images center, JE worked on styling about developers page, DA finished the goo button
 - 1700:
