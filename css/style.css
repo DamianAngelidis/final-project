@@ -13,10 +13,6 @@ a {
   padding: 8%;
 }
 
-audio{
-  display: none;
-}
-
 #backgroundimage {
   position: fixed;
   width: 100%;
